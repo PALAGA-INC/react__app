@@ -1,0 +1,391 @@
+.routerExpand,
+.routerHide,
+.cartExpand {
+  display: none;
+}
+
+.navbar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  padding-bottom: 4px;
+  border-bottom: 1px solid transparent;
+  z-index: 3;
+}
+.fixed {
+  background-color: var(--charlie);
+  box-shadow: var(--shadowOne);
+}
+.small__navbar__wrapper {
+  display: none;
+}
+.navbar .large__navbar__wrapper {
+  display: grid;
+  grid-template-columns: 35px 2fr 1fr;
+  grid-template-rows: 60px;
+}
+.navbar .large__navbar__wrapper > div {
+  display: flex;
+  align-items: center;
+}
+.navbar .large__navbar__wrapper .logo {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+  justify-content: start;
+}
+.navbar .large__navbar__wrapper .routers {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+  justify-content: center;
+}
+.navbar .large__navbar__wrapper .buttons {
+  grid-column: 3 / 4;
+  grid-row: 1 / 2;
+  justify-content: end;
+}
+.navbar .large__navbar__wrapper .buttonsSmallDevice,
+.navbar .large__navbar__wrapper .menu {
+  display: none;
+}
+.navbar .large__navbar__wrapper .buttonsSmallDevice > div {
+  margin-left: 0px;
+  border-radius: var(--radius);
+}
+.signupIcon img,
+.loginIcon img,
+.logo img,
+.menu img {
+  height: 40px;
+  width: 40px;
+}
+
+.cart img:hover,
+.menu img:hover,
+.signupIcon img:hover,
+.loginIcon img:hover {
+  background-color: var(--delta);
+  border-radius: 50%;
+}
+.navbar .large__navbar__wrapper .routers .router button img {
+  margin-right: 5px;
+}
+.navbar .large__navbar__wrapper .routers .router button {
+  display: flex;
+  align-items: center;
+  line-height: 25px;
+  font-size: 14px;
+  margin: 0 25px;
+  padding: 15px;
+  padding-right: 24.2px;
+  border-top: 4px solid transparent;
+}
+.navbar .large__navbar__wrapper .routers .router .routerActive {
+  border-top: 4px solid var(--alfa);
+}
+.navbar .large__navbar__wrapper .buttons button {
+  font-size: 14px;
+  padding: 0 25px;
+  color: var(--black);
+  line-height: 35px;
+  border-radius: var(--radius);
+}
+.navbar .large__navbar__wrapper .buttons .daftar {
+  color: var(--black);
+  margin-right: 10px;
+}
+.navbar .large__navbar__wrapper .buttons .masuk {
+  background-color: var(--alfa);
+  color: var(--white);
+}
+.navbar .large__navbar__wrapper .buttons .daftar:hover {
+  background-color: var(--delta);
+  color: var(--black);
+}
+.navbar .large__navbar__wrapper .buttons .masuk:hover {
+  background-color: var(--delta);
+  color: var(--black);
+}
+.navbar .cart {
+  display: flex;
+  justify-content: space-evenly;
+  position: relative;
+  margin-left: 25px;
+  width: 40px;
+}
+.navbar .cart span {
+  position: absolute;
+  color: var(--white);
+  background-color: var(--beta);
+  width: 20px;
+  height: 20px;
+  line-height: 20.1px;
+  font-size: 12px;
+  text-align: center;
+  border-radius: 50%;
+  top: -1px;
+  right: -1px;
+}
+
+
+/* ============shoping cart=================== */
+
+
+
+@keyframes shopingCartExpand {
+  from {
+    transform: translateX(300px);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.cartExpandHide{
+  display: none;
+}
+
+.cartExpand {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  background-color: var(--fadedbg);
+  z-index: 4;
+
+}
+.cartExpandSide{
+  width: calc(100vw - 625px);
+  height: 100vh;
+}
+.cartExpandContentWrapper {
+  width: 625px;
+  background-color: var(--greyhard);
+  color: var(--greysoft);
+  font-size: 17px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 35px;
+  grid-template-rows: 60px 5px repeat(4, 40px);
+  align-items: center;
+  padding: 0 20px;
+  animation: 175ms shopingCartExpand;
+}
+
+.closeIcon img {
+  height: 35px;
+  width: 35px;
+  transform: translateY(4px);
+}
+
+.closeIcon img:hover {
+  background-color: var(--greyshadow);
+  border-radius: 50%;
+}
+
+.horisontalLine {
+  width: 100%;
+  margin: 0 auto;
+  height: 0.4px;
+  background-color: var(--greysoft);
+  grid-column: 1/4;
+}
+
+/* ============================================ */
+
+@media (max-width: 1440px) {
+  .navbar .large__navbar__wrapper {
+    max-width: 1200px;
+  }
+  .navbar .large__navbar__wrapper .routers .router button {
+    font-size: 13px;
+  }
+  .navbar .large__navbar__wrapper .buttons button {
+    font-size: 13px;
+  }
+
+  .cartExpandContentWrapper {
+    width: 525px;
+    font-size: 17px;
+    font-weight: 300;
+  }
+  .cartExpandSide{
+    width: calc(100vw - 525px);
+    height: 100vh;
+  }
+}
+
+@media (max-width: 1024px) {
+  .navbar .large__navbar__wrapper .routers .router button {
+    font-size: 13px;
+    margin: 0 5px;
+    padding-left: 5px;
+  }
+  .navbar .large__navbar__wrapper .buttons button {
+    font-size: 13px;
+  }
+  .cartExpandContentWrapper {
+    width: 425px;
+    font-size: 15px;
+    font-weight: 300;
+  }
+  .cartExpandSide{
+    width: calc(100vw - 425px);
+    height: 100vh;
+  }
+}
+
+/* media tablet */
+@media (max-width: 768px) {
+  .navbar .large__navbar__wrapper {
+    grid-template-columns: 1fr 35px 1fr;
+  }
+
+  .navbar .large__navbar__wrapper .menu {
+    display: grid;
+    grid-column: 1/2;
+    transform: translateY(10px);
+    width: fit-content;
+    height: fit-content;
+  }
+  .navbar .large__navbar__wrapper .logo {
+    grid-column: 2/3;
+    padding: 10px 0;
+    transform: translateY(2.3px);
+  }
+  .navbar .large__navbar__wrapper .buttonsSmallDevice {
+    transform: translateY(3px);
+    display: flex;
+    grid-column: 3/4;
+    grid-row: 1/2;
+    justify-self: end;
+  }
+  .navbar .large__navbar__wrapper .buttons .cart,
+  .navbar .large__navbar__wrapper .routers,
+  .navbar .large__navbar__wrapper .buttons button {
+    display: none;
+  }
+  .cart {
+    transform: translateY(-4px);
+  }
+
+  /* ===================expand router==================== */
+  .routerHide {
+    display: none;
+  }
+
+  @keyframes routerExpand {
+    from {
+      transform: translateX(-300px);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+
+  .routerExpand {
+    position: fixed;
+    top: 0px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    background-color: var(--fadedbg);
+    z-index: 4;
+  }
+  .routerExpandContentWrapper {
+    background-color: var(--greyhard);
+    width: 425px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 60px 5px repeat(4, 40px);
+    align-items: center;
+    padding: 0 20px;
+    animation: 175ms routerExpand;
+  }
+  .routerExpandSide{
+    width: calc(100vw - 425px);
+    height: 100vh;
+  }
+  .logoName {
+    grid-column: 2/3;
+    justify-items: end;
+    justify-self: end;
+    margin-right: 4px;
+  }
+  .logoName img,
+  .closeIcon img {
+    height: 35px;
+    width: 35px;
+    transform: translateY(4px);
+  }
+  .closeIcon img:hover {
+    background-color: var(--greyshadow);
+    border-radius: 50%;
+  }
+  .routerExpand .routerExpandContentWrapper .routers .router button img {
+    display: none;
+  }
+  .cartExpandContentWrapper {
+    width: 425px;
+    font-size: 14px;
+  }
+
+}
+
+@media (max-width: 425px) {
+  .navbar .large__navbar__wrapper {
+    display: none;
+  }
+  .navbar .small__navbar__wrapper {
+    background-color: var(--charlie);
+    display: grid;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    grid-template-columns: 60px 1fr 60px;
+    grid-template-rows: 40px;
+    padding-top: 10px;
+    align-items: center;
+    justify-items: center;
+    background-color: transparent;
+  }
+  .fixed {
+    background-color: var(--charlie);
+    box-shadow: var(--shadowOne);
+    height: 50px;
+  }
+
+  .navbar .small__navbar__wrapper .menu {
+    grid-column: 1/2;
+    margin: 0;
+    padding: 0;
+    transform: translateY(-4px);
+  }
+  .navbar .small__navbar__wrapper .logo {
+    grid-column: 2/3;
+    margin: 0;
+    padding: 0;
+    height: 40px;
+    transform: translateY(-7px);
+  }
+  .navbar .small__navbar__wrapper .cart {
+    grid-column: 3/4;
+    margin: 0;
+    padding: 0;
+    transform: translateY(-4px);
+  }
+
+  .routerExpandContentWrapper {
+    max-width: 425px;
+  }
+
+  .cartExpandSide{
+    display: none;
+  }
+  .cartExpandContentWrapper {
+    width: 100vw;
+  }
+}

@@ -1,0 +1,51 @@
+.background{
+  display: grid;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  grid-template-columns: 1fr 0.4fr 0.6fr;
+  grid-template-rows: 70vh;
+  z-index: -2;
+}
+.background .leftbg{
+  max-height: 60vh;
+  z-index: -1;
+  transform: translateY(100px);
+}
+.background .rightbg{
+  grid-column: 3/4;
+  max-height: 30vh;
+  justify-self: end;
+  z-index: -1;
+
+}
+
+.background .bg{
+  display: none;
+}
+
+@media (max-width: 768px) {
+ .leftbg,
+ .rightbg{
+  display: none;
+ }
+
+ .background{
+  display: grid;
+  grid-template-columns: 1fr;
+ }
+
+ .background .bg{
+  display: block;
+  margin: -10px 5vw;
+  z-index: -1;
+ }
+
+
+}
+
+@media (max-width: 425px) {
+ 
+}
+

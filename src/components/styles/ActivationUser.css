@@ -1,0 +1,68 @@
+
+.activation__user{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--fadedbg);
+  z-index: 10;
+  animation: 200ms ease-out openWindow;
+}
+
+.activation__user .area__activation{
+  grid-column: 1/2;
+  width: 100%;
+  height: 100vh;
+  z-index: 11;
+  background-color: var(--white);
+  z-index: 11;
+  box-shadow: var(--shadowTwo);
+  display: grid;
+  position: relative;
+}
+
+.activation__user .area__activation .activation__wrapper{
+  width: 100%;
+  max-width: 400px;
+  place-self: center;
+  background-color: var(--white);
+  border-radius: var(--round);
+  display: grid;
+  justify-items: center;
+  place-self: center;
+  padding: 35px 0px;
+  box-shadow: var(--shadowOne);
+}
+
+.activation__user .area__activation .activation__wrapper .strip__top{
+  height: 6px;
+  width: 100px;
+  background-color: var(--alfa);
+  position: absolute;
+}
+
+.activation__user .area__activation .activation__wrapper > *{
+  margin-bottom: 15px;
+}
+
+.activation__user .area__activation .activation__wrapper > div{
+  height: fit-content;
+  position: relative; 
+}
+.activation__user .area__activation .activation__wrapper p{
+  font-size: 19px;
+  font-weight: 700;
+  font-style: italic;
+}
+.activation__user .area__activation .activation__wrapper .submit__section{
+  padding: 0 15px;
+  align-items: center;
+  display: grid;
+  margin-top: 30px;
+}
+
+
+
